@@ -1,0 +1,42 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+register:
+    path: /inscription
+    controller: App\Controller\UserController::register
+confirm:
+    path: /confirmation
+    controller: App\Controller\UserController::confirm
+verify:
+    path: /verification/{id}
+    controller: App\Controller\UserController::verify
+login:
+    path: /connexion
+    controller: App\Controller\UserController::login
+logout:
+    path: /deconnexion
+    controller: App\Controller\UserController::logout
+history:
+    path: /historique
+    controller: App\Controller\UserController::history
+update:
+    path: /profil/modifier
+    controller: App\Controller\UserController::update
+createCategory:
+    path: /categories/creer
+    controller: App\Controller\CategoryController::create
+category:
+    path: /categories/{id}
+    controller: App\Controller\CategoryController::index
+createQuizz:
+    path: /quizzs/creer/{id}
+    controller: App\Controller\QuizzController::create
+completeQuizz:
+    path: /quizzs/sauvegarde/
+    controller: App\Controller\QuizzController::saveQuizz
+quizz:
+    path: /quizzs/{id}
+    controller: App\Controller\QuizzController::index
+admin:
+    path: /admin
+    controller: App\Controller\Admin\DashboardController::index

@@ -1,0 +1,53 @@
+{% extends "layout.html.twig" %}
+{% block body %}
+    <div class="quizzForm">
+        {% if nb_questions is not defined %}
+            <form>
+                <div id="quizz">
+                    <div>
+                        <label>Nom du Quizz</label>
+                        <input type="text" name="name" id="name" placeholder="Nom du Quizz">
+                    </div>
+                    <div>
+                        <label>Nombre de questions</label>
+                        <div>
+                            <select name="nb_questions" id="nb_questions" >
+                                {% for i in 1..20 %}
+                                    <option value="{{ i }}">{{ i }}&nbsp;{{ (i == 1) ? "Question" : "Questions" }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit">Créer le Quizz</button>
+                    </div>
+                </div>
+            </form>
+        {% else %}
+            <form action="/quizzs/sauvegarde/" method="POST">
+                <div id="quizz">
+                    {% for i in 1..nb_questions %}
+                        <div>
+                            <label>Question {{ i }}</label>
+                            <input type="text" name="question{{ i }}" placeholder="Question {{ i }}">
+                            {# <label>Entrez les propositions de réponse et cochez la bonne :</label> #}
+                            <div class="grid">
+                                {% for j in 1..4 %}
+                                <div>
+                                    <input type="radio" name="good_answer{{ i }}" value="{{ j }}">
+                                    <input type="text" name="answer{{ j }}of{{ i }}" placeholder="Réponse {{ j }}">
+                                </div>
+                                {% endfor %}
+                            </div>
+
+                        </div>
+                    {% endfor %}
+                    <div>
+                        <button type="submit">Ajouter les questions</button>
+                    </div>
+                    <input type="hidden" name="quizz_id" value="{{ quizzId }}">
+                </div>
+            </form> 
+        {% endif %}
+    </div>
+{% endblock %}

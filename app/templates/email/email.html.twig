@@ -1,0 +1,41 @@
+{% block body %}
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .title {
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(90deg, #C145FF, #9525CC, #660696);
+        }
+        .title > h1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: calc(100% - 1px);
+            margin: 0px 0px 1px 0px;
+            color: #FFFFFF;
+            background-color: #2B2B2B;
+        }
+        p {
+            margin: 30px auto;
+        }
+        a {
+            margin: 10px auto;
+            padding: 5px 20px;
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 5px;
+            background: linear-gradient(90deg, #C145FF, #9525CC, #660696);
+            box-shadow: 2px 2px 5px #00000080;
+        }
+    </style>
+    <div class="title">
+        <h1>My Quizz</h1>
+    </div>
+    <p>Pour valider votre compte, cliquez sur le lien ci-dessous !</p>
+    <a href="http://127.0.0.1:8000/verification/{{ id }}">Cliquez ici !</a>
+{% endblock %}

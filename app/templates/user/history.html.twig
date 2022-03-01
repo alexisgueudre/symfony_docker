@@ -1,0 +1,42 @@
+{% extends "layout.html.twig" %}
+{% block body %}
+    <div class="historyContainer">
+        <div class="userHistory">
+            <div class="header">
+                <h2>Votre historique sur&nbsp;<a href="/">My Quizz.fr</a>&nbsp;:</h2>
+            </div>
+            <div class="historyList">
+                <div class="table">
+                    <div class="labels">
+                        <div class="columns">
+                            <div class="name">
+                                <p>Nom du Quizz</p>
+                            </div>
+                            <div class="score">
+                                <p>Score</p>
+                            </div>
+                            <div class="date">
+                                <p>Date de la partie</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% for history in histories %}
+                        <a class="labels" href="quizzs/{{ history.quizz.id }}">
+                            <div class="columns">
+                                <div class="name">
+                                    <p>{{ history.quizz.name }}</p>
+                                </div>
+                                <div class="score">
+                                    <p>{{ history.score }}</p>
+                                </div>
+                                <div class="date">
+                                    <p>{{ history.date|date("d/m/Y") }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% if page is defined %}
+            <title>My Quizz - {{ page|title }}</title>
+        {% else %}
+            {% set page = 'Erreur 404' %}
+            <title>My Quizz - Erreur 404</title>
+        {% endif %}
+        
+        <link rel="icon" href="{{ asset("assets/images/favicon/favicon.png") }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ asset("assets/stylesheets/root.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/stylesheets/reset.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/stylesheets/animations.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/stylesheets/navbar.css") }}">
+        {% if page == "Inscription" %}
+            <link rel="stylesheet" href="{{ asset("assets/stylesheets/register.css") }}">
+        {% elseif page == "Connexion" %}
+            <link rel="stylesheet" href="{{ asset("assets/stylesheets/login.css") }}">
+        {% elseif page == "Historique" %}
+            <link rel="stylesheet" href="{{ asset("assets/stylesheets/history.css") }}">
+        {% elseif page == "Modifier le profil" %}
+            <link rel="stylesheet" href="{{ asset("assets/stylesheets/update.css") }}">
+        {% elseif page == "Confirmation" %}
+            <link rel="stylesheet" href="{{ asset("assets/stylesheets/confirm.css") }}">
+        {% elseif page == "Création" %}
+            <link rel="stylesheet" href="{{ asset("assets/stylesheets/quizz.css") }}">
+        {% elseif "Catégorie" in page %}
+            <link rel="stylesheet" href="{{ asset("assets/stylesheets/category.css") }}">
+        {% elseif "Erreur 404" in page %}
+            <link rel="stylesheet" href="{{ asset("assets/stylesheets/error.css") }}">
+        {% endif %}
+        <link rel="stylesheet" href="{{ asset("assets/stylesheets/profile.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/stylesheets/game.css") }}">
+        <link rel="stylesheet" href="{{ asset("assets/stylesheets/footer.css") }}">
+    </head>
+    <body>
+        <nav id="topNavbar">
+            <a href="/">
+                <i class="fas fa-home"></i>
+            </a>
+            <div class="userButtons">
+                    <a href="/historique">Historique</a>
+                {% if not app.user %}
+                    <a href="/inscription">Inscription</a>
+                    <a href="/connexion">Connexion</a>
+                {% else %}
+                    {% if "ROLE_ADMIN" in app.user.roles %}
+                        <a href="/admin">Dashboard</a>
+                    {% endif %}
+                    <a href="/deconnexion">Déconnexion</a>
+                {% endif %}
+            </div>
+        </nav>
+        <div id="myVideo">
+            <video autoplay muted loop>
+                <source src="{{ asset("assets/videos/bckg.mp4") }}" type="video/mp4">
+            </video>
+        </div>
+        <nav id="leftNavbar">
+            {% if page != "Erreur 404" %}
+            <div class="title">
+                <h2>Catégories</h2>
+            </div>
+                <ul>
+                    {% for category in categories %}
+                        <li title="{{ category.name|title }}"><a href="/categories/{{ category.id }}">{{ category.name[:18]|title }}{% if category.name|length > 18 %}[...]{% endif %}</a></li>
+                    {% endfor %}
+                </ul>
+                {% if app.user %}
+                    {% set user = app.user %}
+                    {% if "ROLE_ADMIN" in user.roles %}
+                        <form action="/categories/creer" method="GET">
+                            <div>
+                                <label for="categoryName">Créer une catégorie</label>
+                                <input id="categoryName" type="text" name="name" placeholder="Nom de la catégorie">
+                                <input type="submit" value="Ajouter">
+                            </div>
+                        </form>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </nav>
+        <div class="mainContainer">
+            {% block body %}{% endblock %}
+        </div>
+        {% if app.user %}
+            {% set user = app.user %}
+            <div class="userInformations">
+                <div class="userAvatar">
+                    <div class="circle">
+                        <img src="https://cdn.pixabay.com/photo/2013/07/13/13/40/penguin-161356_960_720.png" alt="Image de profil par défaut.">
+                    </div>
+                </div>
+                <div class="info">
+                    <div>
+                        <i class="fas fa-user"></i>
+                        <p title="{{ user.firstname|title }}">{{ user.firstname[:14]|title }}{% if user.firstname|length > 14 %}[...]{% endif %}</p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div>
+                        <i class="fas fa-user"></i>
+                        <p title="{{ user.lastname|title }}">{{ user.lastname[:14]|title }}{% if user.lastname|length > 14 %}[...]{% endif %}</p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div>
+                        <i class="fas fa-user"></i>
+                        <p title="{{ user.pseudo|title }}">{{ user.pseudo[:14]|title }}{% if user.pseudo|length > 14 %}[...]{% endif %}</p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div>
+                        <i class="fas fa-at"></i>
+                        <p title="{{ user.email }}">{{ user.email[:14] }}{% if user.email|length > 14 %}[...]{% endif %}</p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div>
+                        <i class="fas fa-birthday-cake"></i>
+                        <p>{{ user.birthdate|date("d/m/Y") }}</p>
+                    </div>
+                </div>
+                <a href="/profil/modifier">Modifier</a>
+            </div>
+        {% else %}
+            <div class="rightPlaceholder"></div>
+        {% endif %}
+        <footer>
+            <p>&copy; Copyrights 2021 - Tous droits réservés.</p>
+        </footer>
+    </body>
+</html>

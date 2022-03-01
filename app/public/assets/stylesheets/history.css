@@ -1,0 +1,101 @@
+body > .mainContainer > .historyContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+body > .mainContainer > .historyContainer > .userHistory {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+body > .mainContainer > .historyContainer > .userHistory > .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: var(--horizontal-gradient-color);
+}
+body > .mainContainer > .historyContainer > .userHistory > .header > h2 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 1px);
+    margin: 0px 0px 1px 0px;
+    padding: 0px 10px;
+    background-color: var(--background-color);
+}
+body > .mainContainer > .historyContainer > .userHistory > .header > h2 > a {
+    font-size: inherit;
+    color: transparent;
+    background: var(--horizontal-gradient-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 50px;
+    grid-gap: 10px;
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    overflow-y: auto;
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+    height: calc(100% - 1px);
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .name {
+    display: flex;
+    align-items: center;
+    grid-column: span 6;
+    border-right: 1px solid #00000080;
+    background-color: var(--background-color);
+    transition: background-color 1s ease;
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .score {
+    display: flex;
+    align-items: center;
+    grid-column: span 2;
+    border-right: 1px solid #00000080;
+    background-color: var(--background-color);
+    transition: background-color 1s ease;
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .date {
+    display: flex;
+    align-items: center;
+    grid-column: span 4;
+    background-color: var(--background-color);
+    transition: background-color 1s ease;
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .name:hover,
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .score:hover,
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .date:hover {
+    background-color: transparent;
+}
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .name > p,
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .score > p,
+body > .mainContainer > .historyContainer > .userHistory > .historyList > .table > .labels > .columns > .date > p {
+    padding: 0px 10px;
+}

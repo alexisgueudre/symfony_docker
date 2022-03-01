@@ -1,0 +1,178 @@
+/* ------------------------------------------------------------------------------------------------- */
+/* Top navbar */
+/* ------------------------------------------------------------------------------------------------- */
+#topNavbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0px;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+#topNavbar > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+}
+#topNavbar > a > i {
+    font-size: 20px;
+    color: var(--text-color-alt);
+    transition: color 1s ease;
+}
+#topNavbar > a:hover > i {
+    color: transparent;
+    background: var(--horizontal-gradient-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+#topNavbar > .userButtons {
+    display: flex;
+    width: fit-content;
+    height: 100%;
+    margin: 0px 0px 0px auto;
+    background: var(--horizontal-gradient-color);
+}
+#topNavbar > .userButtons > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    background-color: var(--background-color);
+    transition: background-color 1s ease;
+}
+#topNavbar > .userButtons > a:hover {
+    color: var(--text-color-alt);
+    background-color: transparent;
+}
+/* ------------------------------------------------------------------------------------------------- */
+/* Left navbar */
+/* ------------------------------------------------------------------------------------------------- */
+#leftNavbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: calc(100vh - 100px);
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    z-index: 900;
+}
+#leftNavbar > .title {
+    width: 100%;
+    min-height: 50px;
+    height: 50px;
+    background: var(--horizontal-gradient-color);
+}
+#leftNavbar > .title > h2,
+#leftNavbar > .title > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 1px);
+    margin: 0px 0px 1px 0px;
+    background-color: var(--background-color);
+}
+#leftNavbar > .title > a:hover {
+    color: var(--text-color-alt);
+}
+#leftNavbar > ul,
+#leftNavbar > aside {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 20px);
+    height: calc(100% - 60px);
+    margin: 10px;
+    background: none;
+}
+#leftNavbar > aside > section,
+#leftNavbar > aside > section > ul {
+    width: 100%;
+    height: 100%;
+}
+#leftNavbar > aside > section > ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+    overflow-y: auto;
+}
+#leftNavbar > ul > li,
+#leftNavbar > aside > section > ul > li {
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+}
+#leftNavbar > ul > li > a,
+#leftNavbar > aside > section > ul > li > a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0px 10px;
+    background-color: var(--background-color);
+    transition: background-color 1s ease;
+}
+#leftNavbar > aside > section > ul > li > a > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 100%;
+    margin: 0px 5px 0px 0px;
+    color: var(--text-color-alt);
+    filter: none;
+}
+#leftNavbar > ul > li > a:hover,
+#leftNavbar > aside > section > ul > li > a:hover {
+    background-color: transparent;
+}
+#leftNavbar > form {
+    display: flex;
+    flex-direction: column;
+    background: var(--horizontal-gradient-color);
+}
+#leftNavbar > form > div {
+    display: flex;
+    flex-direction: column;
+    margin: 1px 0px 0px 0px;
+    background-color: var(--background-color);
+}
+#leftNavbar > form > div > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding: 0px 10px;
+}
+#leftNavbar > form > div > input:not([type="submit"]) {
+    width: calc(100% - 20px);
+    height: 30px;
+    margin: 10px;
+    padding: 0px 10px;
+    text-align: center;
+    color: var(--text-color);
+    border-radius: 5px;
+    background-color: var(--background-color-alt);
+    box-shadow: var(--box-shadow) inset;
+}
+#leftNavbar > form > div > input[type="submit"] {
+    margin: 10px auto;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+    transition: transform 1s ease;
+}
+#leftNavbar > form > div > input[type="submit"]:hover {
+    transform: scale(1.1);
+}

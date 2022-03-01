@@ -1,0 +1,13 @@
+{% extends "layout.html.twig" %}
+{% block body %}
+    <div class="registerForm">
+        {{ form(form) }}
+        <div>
+            <div>
+                <p>Vous possédez déjà un compte ?</p>
+                <p>Alors connectez-vous !</p>
+                <a href="/connexion">Cliquez juste ici !</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

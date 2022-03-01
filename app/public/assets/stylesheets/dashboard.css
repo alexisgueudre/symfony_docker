@@ -1,0 +1,155 @@
+body > .mainContainer > .wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 0px;
+}
+body > .mainContainer > .wrapper > header {
+    width: 100%;
+    height: 50px;
+    padding: 0px 10px;
+}
+body > .mainContainer > .wrapper > header > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+body > .mainContainer > .wrapper > .content-wrapper {
+    flex: 1;
+    margin: -20px 0px 0px 0px;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > .content-header,
+body > .mainContainer > .wrapper > .content-wrapper > .content > .content-header:before,
+body > .mainContainer > .wrapper > .content-wrapper > .content > .content-header:after {
+    background: none;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > .content-header {
+    width: 100%;
+    height: 50px;
+    margin: 0px;
+    padding: 0px;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > .content-header > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > .content-header > div > div {
+    align-self: inherit;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > .content-header > div > div > button,
+body > .mainContainer > .wrapper > .content-wrapper > .content > .content-header > div > div > div > a {
+    margin: auto 0px auto 10px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .datagrid-header-tools {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .datagrid-header-tools > .datagrid-search {
+    margin: 0px 10px 0px 0px;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel {
+    margin: 0px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel,
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body,
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table {
+    background: var(--horizontal-gradient-color);
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table > thead {
+    background: none;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table tr {
+    min-height: 40px;
+    height: 40px;
+    max-height: 40px;
+    margin: 0px 0px 1px 0px;
+    border-bottom: 1px solid var(--primary-color);
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table tr th,
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table tr td {
+    border: none;
+    background-color: var(--background-color);
+    transition: background-color 1s ease;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table tr:hover th,
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table tr:hover td {
+    background-color: transparent;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table tr th > a {
+    color: var(--text-color-alt);
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-body > .table .highlight {
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel,
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-footer,
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-footer > div {
+    background: var(--background-color-alt);
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-footer > div * {
+    color: var(--text-color);
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-footer > div > nav > ul > li > a {
+    border: none;
+}
+body > .mainContainer > .wrapper > .content-wrapper > .content > #main > .content-panel > .content-panel-footer > div > nav > ul > li.active > a {
+    color: var(--text-color-alt);
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+}
+.content-panel-body.with-background {
+    background: var(--background-color);
+}
+.content-panel-body.with-background label {
+    color: var(--text-color-alt);
+}
+.custom-control-input:checked~.custom-control-label:before {
+    border-color: var(--primary-color);
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow) inset;
+}
+.popover {
+    border: 1px solid var(--primary-color);
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+}
+.user-menu-wrapper .popover-content-section+.popover-content-section {
+    flex: 1;
+    padding: 0px;
+    border-top: 1px solid #00000080;
+}
+.bs-popover-bottom > .arrow:after {
+    border-bottom-color: var(--primary-color);
+}
+.modal.show .modal-dialog {
+    box-shadow: var(--box-shadow);
+}
+.modal-content {
+    border: 1px solid var(--primary-color);
+    background-color: var(--background-color);
+}
+.modal-footer {
+    background: none;
+    background-color: var(--background-color-alt);
+}
+.modal-footer * {
+    color: var(--text-color);
+}
+.modal-footer button {
+    box-shadow: var(--box-shadow);
+}

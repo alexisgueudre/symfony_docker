@@ -1,0 +1,84 @@
+body > .mainContainer > .quizzForm {
+    display: flex;
+    flex: 1;
+}
+body > .mainContainer > .quizzForm > form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100%;
+    background-color: var(--background-color-alt);
+    box-shadow: var(--box-shadow);
+    overflow-y: auto;
+}
+body > .mainContainer > .quizzForm > form > #quizz {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+body > .mainContainer > .quizzForm > form > #quizz > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > input,
+body > .mainContainer > .quizzForm > form > #quizz > div > .grid > div > input:not([type="radio"]) {
+    width: calc(100% - 20px);
+    height: 30px;
+    margin: 10px;
+    padding: 0px 10px;
+    color: var(--text-color);
+    border-radius: 5px;
+    box-shadow: var(--box-shadow) inset;
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > div:not(.grid) {
+    display: flex;
+    width: calc(100% - 20px);
+    height: 30px;
+    margin: 10px;
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > div:not(.grid) > select {
+    flex: 1;
+    color: var(--text-color);
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > div:not(.grid) > select > option {
+    color: var(--text-color);
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: calc(100% - 20px);
+    height: fit-content;
+    margin: 10px;
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > .grid > div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > button {
+    margin: 10px auto;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+    transition: transform 1s ease;
+}
+body > .mainContainer > .quizzForm > form > #quizz > div > button:hover {
+    transform: scale(1.1);
+}

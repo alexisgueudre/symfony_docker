@@ -1,0 +1,73 @@
+body > .userInformations,
+body > .rightPlaceholder {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: calc(100vh - 100px);
+    position: fixed;
+    top: 50px;
+    right: 0px;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+}
+body > .userInformations > .userAvatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+}
+body > .userInformations > .userAvatar > .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    border-radius: 50%;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+}
+body > .userInformations > .userAvatar > .circle > img {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    margin: auto;
+    border-radius: 50%;
+}
+body > .userInformations > .info {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    background: var(--horizontal-gradient-color);
+}
+body > .userInformations > .info > div {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 1px);
+    margin: 0px 0px 1px 0px;
+    background-color: var(--background-color);
+}
+body > .userInformations > .info > div > i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 100%;
+}
+body > .userInformations > .info > div > p {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+body > .userInformations > a {
+    margin: 20px auto;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+    transition: transform 1s ease;
+}
+body > .userInformations > a:hover {
+    color: var(--text-color-alt);
+    transform: scale(1.1);
+}

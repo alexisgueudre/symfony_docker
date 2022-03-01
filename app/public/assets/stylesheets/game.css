@@ -1,0 +1,203 @@
+body > .mainContainer > .questionContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: hidden;
+}
+body > .mainContainer > .questionContainer > .questionBlock {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    /* padding: 10px; */
+}
+body > .mainContainer > .questionContainer > .questionBlock > .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    background: var(--horizontal-gradient-color);
+}
+body > .mainContainer > .questionContainer > .questionBlock > .title > h3 {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 1px);
+    margin: 0px 0px 1px 0px;
+    padding: 0px 10px;
+    background-color: var(--background-color);
+}
+body > .mainContainer > .questionContainer > .questionBlock > .title > h3 > span {
+    font-size: inherit;
+    color: transparent;
+    background: var(--horizontal-gradient-color);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+body > .mainContainer > .questionContainer > .questionBlock > .questions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+    flex: 1;
+    padding: 10px;
+}
+body > .mainContainer > .questionContainer > .questionBlock > .questions > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body > .mainContainer > .questionContainer > .questionBlock > .questions > div > label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    border: 5px solid var(--background-color);
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    transition: 1s border ease;
+}
+body > .mainContainer > .questionContainer > .questionBlock > .questions > div > label:hover {
+    border: 5px solid var(--primary-color);
+}
+body > .mainContainer > .questionContainer > .questionBlock > .questions > div > input {
+    display: none;
+}
+body > .mainContainer > .questionContainer > .questionBlock > .questions > div > input:checked + label {
+    border: 5px solid var(--primary-color) !important;
+}
+body > .mainContainer > .questionContainer > .questionBlock > .nextQuestion,
+body > .mainContainer > .questionContainer > .questionBlock > button {
+    margin: 20px auto;
+    padding: 5px 20px;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+    transition: transform 1s ease;
+}
+body > .mainContainer > .questionContainer > .questionBlock > .nextQuestion:hover,
+body > .mainContainer > .questionContainer > .questionBlock > button:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+body > .mainContainer > .questionContainer > .quizzEnd {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    position: relative;
+    margin: auto;
+    border-radius: 5px;
+    background-color: var(--background-color);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .title {
+    width: 100%;
+    min-height: 50px;
+    height: 50px;
+    background: var(--horizontal-gradient-color);
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .title > h3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 1px);
+    margin: 0px 0px 1px 0px;
+    background-color: var(--background-color);
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .circle {
+    display: flex;
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+    position: relative;
+    border-radius: 50%;
+    background: var(--horizontal-gradient-color);
+    box-shadow: var(--box-shadow);
+    animation: rotate 1s linear infinite;
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .circle::after {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    content: "";
+    border-radius: 50%;
+    background: var(--horizontal-gradient-color);
+    filter: blur(10px);
+    animation: rotate 1s linear infinite;
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 145px;
+    height: 145px;
+    margin: 50px auto;
+    position: absolute;
+    top: 52.5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background-color: var(--background-color);
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .inner > p {
+    font-size: 20px;
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div {
+    height: fit-content;
+    margin: 0px 10px 10px 10px;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div:first-of-type {
+    margin: 10px;
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div > .title {
+    width: 100%;
+    height: 30px;
+    background: var(--horizontal-gradient-color);
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div > .title > p {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0px 10px;
+    height: calc(100% - 1px);
+    margin: 0px 0px 1px 0px;
+    background-color: var(--background-color);
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div > .given {
+    padding: 10px;
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div > .given > p > .goodAnswer {
+    color: var(--success-color);
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div > .given > p > .badAnswer {
+    color: var(--error-color);
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div > .expected {
+    padding: 0px 10px 10px 10px;
+}
+body > .mainContainer > .questionContainer > .quizzEnd > .feedback > div > .expected > p > span {
+    color: var(--success-color);
+}

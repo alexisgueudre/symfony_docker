@@ -1,0 +1,58 @@
+{% extends "layout.html.twig" %}
+{% block body %}
+    {% if questions is defined %}
+        <form method="POST" class="questionContainer">
+            {% for question in questions %}
+                <div id="question{{ question.id }}" class="questionBlock">
+                    <div class="title">
+                        <h3 title="{{ question.question }}"><span>Question</span> &nbsp;: {{ question.question[:60] }}{% if question.question|length > 60 %}...{% endif %}</h3>
+                    </div>
+                    <div class="questions">
+                        {% for answer in question.answers %}
+                            <div>
+                                <input id="answer{{ answer.id }}" type="radio" name="question{{ question.id }}" value="{{ answer.answer }}">
+                                <label for="answer{{ answer.id }}">{{ answer.answer }}</label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% if loop.last %}
+                        <button type="submit">Confirmer</button>
+                    {% else %}
+                        <a class="nextQuestion" href="#question{{ question.id + 1 }}">Question suivante</a>
+                    {% endif %}
+                </div>
+                <input type="hidden" name="formSubmit" value="true">
+            {% endfor %}
+        </form>
+    {% else %}
+        <div class="questionContainer">
+            <div class="quizzEnd">
+                <div class="title">
+                    <h3>Score</3>
+                </div>
+                <div class="circle"></div>
+                <div class="inner">
+                    <p>{{ score }}</p>
+                </div>
+                <div class="feedback">
+                    {% set i = 0 %}
+                    {% for feed in feedback %}
+                        {% set i = i + 1 %}
+                        {# {{ dump(feed) }} #}
+                        <div>
+                            <div class="title">
+                                <p>Question {{ i }} :</p>
+                            </div>
+                            <div class="given">
+                                <p>Votre réponse :<br><span class="{% if feed.given == feed.expected %}goodAnswer{% else %}badAnswer{% endif %}">{{ feed.given }}</span></p>
+                            </div>
+                            <div class="expected">
+                                <p>La bonne réponse était :<br><span>{{ feed.expected }}</span></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}
